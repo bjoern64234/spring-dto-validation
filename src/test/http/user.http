@@ -1,0 +1,25 @@
+### Get all animals
+POST {{localhost}}:{{port}}/api/users
+Content-Type: application/json
+
+{
+  "username": "mustermann",
+  "age": 37,
+  "email": "mustermann@email.de",
+  "password": "cdkslwofddfsfs1A"
+}
+
+> {%
+    var res = response.body
+    client.global.set("id", res.id)
+    client.global.set("name", res.name)
+%}
+
+### Get user by name
+GET {{localhost}}:{{port}}/api/users?name={{name}}
+
+### Get all users wit given age
+GET {{localhost}}:{{port}}/api/users/age?age=37
+
+### Get user by password
+GET {{localhost}}:{{port}}/api/users/pass?password=cdkslwofddfsfs1
