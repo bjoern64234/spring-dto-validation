@@ -1,6 +1,5 @@
 package org.example.springdtovalidation.service;
 
-import lombok.Value;
 import org.example.springdtovalidation.model.User;
 import org.example.springdtovalidation.model.UserDTO;
 import org.example.springdtovalidation.repository.UserRepo;
@@ -8,7 +7,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
