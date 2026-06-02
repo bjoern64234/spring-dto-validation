@@ -13,6 +13,6 @@ public record UserDTO(
         int age,
         @Email(message = "The email must be valid.")
         String email,
-        @Pattern(regexp = "^(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z]).+$")
+        @Pattern(regexp = "^(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z]).+$", message="The password must be valid.")
         String password) {
 }
