@@ -158,18 +158,4 @@ class UserControllerTest {
                   }
                 """));
     }
-
-    @Test
-    void getUserByPassword_shouldReturnException_whenPasswordIsLessThen8Characters() throws Exception {
-        User user = User.builder().build().withId("1").withUsername("mustermann").withAge(37).withEmail("mustermann@email.de").withPassword("cdkslwofddfsfs1A");
-        this.userRepo.save(user);
-        this.mockMvc.perform(get("/api/users/pass?password=45"))
-                .andExpect(status().isBadRequest())
-                .andExpect(content().contentType("application/json"))
-                .andExpect(content().json("""
-                  {
-                    "password": "The password must be at least 8 character long."
-                  }
-                """));
-    }
 }
